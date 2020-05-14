@@ -1,0 +1,12 @@
+<h1><%= @song.title %></h1>
+<% if @song.released %>
+<p>This song was officially released in <%= @song.release_year %>.</p>
+<% else %>
+<p>This song was never officially released.</p>
+<% end %>
+<p><%= @song.artist_name %></p>
+<% if @song.genre %>
+<p><%= @song.genre %></p>
+<% end %>
+<%= button_to "Delete song", song_path(@song), method: :delete %>
+<%= link_to "Edit song", edit_song_path(@song) %>
